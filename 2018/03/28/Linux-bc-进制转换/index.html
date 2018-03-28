@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://bianfei.info">
-  <title>stm32中断方式延时 | Hexo</title>
+  <title>Linux bc 进制转换 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Systic定时器是一个24位倒计数定时器，当计数到0时，则从RELOAD寄存器中自动重装载定时初值，开始新一轮计数。只要不把SysTic控制及状态寄存器中的使能位清除，定时器就会一直运行，并且在睡眠模式下也可工作。">
-<meta name="keywords" content="-stm32">
+  <meta name="description" content="bc命令是一种支持任意精度的交互执行的计算器语言，可以很方便的进行整数，浮点数运算。">
+<meta name="keywords" content="-linux-工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="stm32中断方式延时">
-<meta property="og:url" content="http://bianfei.info/2018/01/29/stm32中断方式延时/index.html">
+<meta property="og:title" content="Linux bc 进制转换">
+<meta property="og:url" content="http://bianfei.info/2018/03/28/Linux-bc-进制转换/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Systic定时器是一个24位倒计数定时器，当计数到0时，则从RELOAD寄存器中自动重装载定时初值，开始新一轮计数。只要不把SysTic控制及状态寄存器中的使能位清除，定时器就会一直运行，并且在睡眠模式下也可工作。">
-<meta property="og:updated_time" content="2018-01-29T04:45:26.955Z">
+<meta property="og:description" content="bc命令是一种支持任意精度的交互执行的计算器语言，可以很方便的进行整数，浮点数运算。">
+<meta property="og:updated_time" content="2018-03-28T06:47:57.792Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="stm32中断方式延时">
-<meta name="twitter:description" content="Systic定时器是一个24位倒计数定时器，当计数到0时，则从RELOAD寄存器中自动重装载定时初值，开始新一轮计数。只要不把SysTic控制及状态寄存器中的使能位清除，定时器就会一直运行，并且在睡眠模式下也可工作。">
+<meta name="twitter:title" content="Linux bc 进制转换">
+<meta name="twitter:description" content="bc命令是一种支持任意精度的交互执行的计算器语言，可以很方便的进行整数，浮点数运算。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,32 +154,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-stm32中断方式延时" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Linux-bc-进制转换" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      stm32中断方式延时
+      Linux bc 进制转换
     </h1>
   
 
         
-        <a href="/2018/01/29/stm32中断方式延时/" class="archive-article-date">
-  	<time datetime="2018-01-29T04:05:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-29</time>
+        <a href="/2018/03/28/Linux-bc-进制转换/" class="archive-article-date">
+  	<time datetime="2018-03-28T06:09:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Systic定时器是一个24位倒计数定时器，当计数到0时，则从RELOAD寄存器中自动重装载定时初值，开始新一轮计数。只要不把SysTic控制及状态寄存器中的使能位清除，定时器就会一直运行，并且在睡眠模式下也可工作。</p>
+        <p>bc命令是一种支持任意精度的交互执行的计算器语言，可以很方便的进行整数，浮点数运算。</p>
 <a id="more"></a>
-<h4 id="位于core-cm3-h中的定时器实现方式"><a href="#位于core-cm3-h中的定时器实现方式" class="headerlink" title="位于core_cm3.h中的定时器实现方式"></a>位于core_cm3.h中的定时器实现方式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @brief  Initialize and start the SysTick counter and its interrupt.</span><br><span class="line"> *</span><br><span class="line"> * @param   ticks   number of ticks between two interrupts</span><br><span class="line"> * @<span class="built_in">return</span>  1 = failed, 0 = successful</span><br><span class="line"> *</span><br><span class="line"> * Initialise the system tick timer and its interrupt and start the</span><br><span class="line"> * system tick timer / counter <span class="keyword">in</span> free running mode to generate</span><br><span class="line"> * periodical interrupts.</span><br><span class="line"> */</span><br><span class="line">static __INLINE uint32_t SysTick_Config(uint32_t ticks)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> (ticks &gt; SysTick_LOAD_RELOAD_Msk)  <span class="built_in">return</span> (1);            /* Reload value impossible */</span><br><span class="line"></span><br><span class="line">  SysTick-&gt;LOAD  = (ticks &amp; SysTick_LOAD_RELOAD_Msk) - 1;      /* <span class="built_in">set</span> reload register */</span><br><span class="line">  NVIC_SetPriority (SysTick_IRQn, (1&lt;&lt;__NVIC_PRIO_BITS) - 1);  /* <span class="built_in">set</span> Priority <span class="keyword">for</span> Cortex-M0 System Interrupts */</span><br><span class="line">  SysTick-&gt;VAL   = 0;                                          /* Load the SysTick Counter Value */</span><br><span class="line">  SysTick-&gt;CTRL  = SysTick_CTRL_CLKSOURCE_Msk |</span><br><span class="line">                   SysTick_CTRL_TICKINT_Msk   |</span><br><span class="line">                   SysTick_CTRL_ENABLE_Msk;                    /* Enable SysTick IRQ and SysTick Timer */</span><br><span class="line">  <span class="built_in">return</span> (0);                                                  /* Function successful */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="调用SysTic定时器，并初始化为1ms中断一次"><a href="#调用SysTic定时器，并初始化为1ms中断一次" class="headerlink" title="调用SysTic定时器，并初始化为1ms中断一次"></a>调用SysTic定时器，并初始化为1ms中断一次</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SysTic_Config(SystemCroeClock/1000);</span><br></pre></td></tr></table></figure>
-<h4 id="定义外部变量，并实现中断服务函数"><a href="#定义外部变量，并实现中断服务函数" class="headerlink" title="定义外部变量，并实现中断服务函数"></a>定义外部变量，并实现中断服务函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">static uint32_t TimingDelay;</span><br><span class="line"></span><br><span class="line">void SysTick_Handler(void)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span>(TimingDelay != 0x00)</span><br><span class="line">  &#123;</span><br><span class="line">    TimingDelay--;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="实现中断延时"><a href="#实现中断延时" class="headerlink" title="实现中断延时"></a>实现中断延时</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void Delay(uint32_t nTime)</span><br><span class="line">&#123;</span><br><span class="line">  TimingDelay = nTime;</span><br><span class="line">  <span class="keyword">while</span>(TimingDelay != 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="运算并设置小数精度"><a href="#运算并设置小数精度" class="headerlink" title="运算并设置小数精度"></a>运算并设置小数精度</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"scale=2;1/3"</span> | bc</span><br><span class="line">.333</span><br></pre></td></tr></table></figure>
+<p>参数<code>scale=</code>用来设置小数位数</p>
+<h4 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"obase=2;9"</span> | bc</span><br><span class="line">1001</span><br></pre></td></tr></table></figure>
+<p>执行结果为1010，未指定待转换数进制形式时默认为10进制，例如此处的9。参数<code>obase</code>表示转换后形式，此处为<code>2</code>,表示用二进制形式输出显示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"obase=10;ibase=2;1001"</span> | bc</span><br><span class="line">9</span><br></pre></td></tr></table></figure>
+<p>执行结果为9，参数<code>obase</code>表示转换后形式（参数值可以2,8,10,16），参数<code>ibase</code>表示转换前形式（参数值可以2,8,10,16）。</p>
+<h4 id="计算平方根并设置结果精度"><a href="#计算平方根并设置结果精度" class="headerlink" title="计算平方根并设置结果精度"></a>计算平方根并设置结果精度</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"scale=7;sqrt(11)"</span> | bc</span><br><span class="line">3.3166247</span><br></pre></td></tr></table></figure>
+<p><a href="http://man.linuxde.net/bc" target="_blank" rel="noopener">参考链接</a></p>
 
       
 
@@ -214,7 +218,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-stm32</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-linux-工具</a>
         		</li>
       		
 		</ul>
@@ -270,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://bianfei.info/2018/01/29/stm32中断方式延时/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://bianfei.info/2018/03/28/Linux-bc-进制转换/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +288,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/29/问题-The-selected-build-of-GDB-does-not-support-Python/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          问题:The selected build of GDB does not support Python
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/28/linux-jlink-STM32可执行文件下载/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">linux jlink STM32可执行文件下载</div>
+    <a href="/2018/03/16/my-backgrounds/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ubuntu_17.10&#39;s backgrounds</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -323,7 +318,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="stm32中断方式延时" data-title="stm32中断方式延时" data-url="http://bianfei.info/2018/01/29/stm32中断方式延时/"></div>
+	<div class="ds-thread" data-thread-key="Linux-bc-进制转换" data-title="Linux bc 进制转换" data-url="http://bianfei.info/2018/03/28/Linux-bc-进制转换/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
