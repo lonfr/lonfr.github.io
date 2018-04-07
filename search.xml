@@ -162,10 +162,31 @@
   
     
     <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
       <title>Resume</title>
       <link href="/resume/index.html"/>
       <url>/resume/index.html</url>
       <content type="html"><![CDATA[<h1 id="王小二-wangxiaoer-gmail-com"><a href="#王小二-wangxiaoer-gmail-com" class="headerlink" title="王小二(wangxiaoer#gmail.com)"></a>王小二(wangxiaoer#gmail.com)</h1><h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><ul><li>本科/XXX大学(20XX.9-20XX.7)/计算机科学与技术</li><li>工作年限：2年</li><li>技术博客：<a href="http://xxxxx.com" target="_blank" rel="noopener">http://xxxxx.com</a></li><li>地点：北京</li></ul><h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><h3 id="五道口宇宙中心"><a href="#五道口宇宙中心" class="headerlink" title="五道口宇宙中心"></a>五道口宇宙中心</h3><h4 id="XXXX项目（2013-10-至今）"><a href="#XXXX项目（2013-10-至今）" class="headerlink" title="XXXX项目（2013.10-至今）"></a>XXXX项目（2013.10-至今）</h4><ul><li>XXXXXXXXXXXXXXXXX</li><li>XXXXXXXXXXXXXXXXXX</li><li>XXXXXXX</li><li>XXXXXXXXXXXXXXXXXXXXXX</li></ul><h2 id="技能列表"><a href="#技能列表" class="headerlink" title="技能列表"></a>技能列表</h2><p>熟悉：Android/Java<br>了解：C#/WP，Python，HTML, Markdown等</p>]]></content>
+    </entry>
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>timeline</title>
+      <link href="/timeline/index.html"/>
+      <url>/timeline/index.html</url>
+      <content type="html"><![CDATA[]]></content>
     </entry>
     
   
