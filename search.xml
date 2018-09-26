@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>docker容器拷贝</title>
+      <link href="/2018/09/26/docker%E5%AE%B9%E5%99%A8%E6%8B%B7%E8%B4%9D/"/>
+      <url>/2018/09/26/docker%E5%AE%B9%E5%99%A8%E6%8B%B7%E8%B4%9D/</url>
+      <content type="html"><![CDATA[<p>docker容器与主机间的文件复制方法</p><a id="more"></a><h4 id="查看容名称"><a href="#查看容名称" class="headerlink" title="查看容名称"></a>查看容名称</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker ps</span><br><span class="line">CONTAINER ID      IMAGE   COMMAND   CREATED   STATUS    PORTS   NAMES</span><br><span class="line">XXXXXXXXXXXX      XXXXX   XXXXXXX   XXXXXXX   XXXXXX    XXXXX   *****</span><br></pre></td></tr></table></figure><h4 id="从宿主机copy文件到容器中"><a href="#从宿主机copy文件到容器中" class="headerlink" title="从宿主机copy文件到容器中"></a>从宿主机copy文件到容器中</h4><h6 id="docker-cp-待复制文件在主机中路径-容器名-待复制文件在容器中的路径"><a href="#docker-cp-待复制文件在主机中路径-容器名-待复制文件在容器中的路径" class="headerlink" title="docker cp 待复制文件在主机中路径  容器名:/待复制文件在容器中的路径"></a>docker cp 待复制文件在主机中路径  容器名:/待复制文件在容器中的路径</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker cp /home/username/test.txt *****:/home/shared_dir</span><br></pre></td></tr></table></figure><h4 id="从容器中copy文件到主机"><a href="#从容器中copy文件到主机" class="headerlink" title="从容器中copy文件到主机"></a>从容器中copy文件到主机</h4><h6 id="docker-cp-容器名-待复制文件在容器中的路径-待复制文件在主机中路径"><a href="#docker-cp-容器名-待复制文件在容器中的路径-待复制文件在主机中路径" class="headerlink" title="docker cp 容器名:/待复制文件在容器中的路径 待复制文件在主机中路径"></a>docker cp 容器名:/待复制文件在容器中的路径 待复制文件在主机中路径</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker cp *****:/home/shared_dir/test.txt /home/username/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+        <tags>
+            
+            <tag> -docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Linux C open()</title>
       <link href="/2018/04/06/Linux-C-open%E5%87%BD%E6%95%B0/"/>
       <url>/2018/04/06/Linux-C-open%E5%87%BD%E6%95%B0/</url>
